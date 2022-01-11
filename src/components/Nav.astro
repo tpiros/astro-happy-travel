@@ -1,0 +1,41 @@
+<nav class="bg-indigo-800">
+  <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+    <div class="relative flex items-center justify-between h-16">
+      <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+      </div>
+      <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+        <div class="flex-shrink-0 flex items-center">
+          <span class="px-3 py-1 text-white block lg:hidden h-8 w-auto">HT</span>
+          <a href="/" class="px-3 py-1 text-white hidden lg:block h-8 w-auto">HappyTravels</a>
+        </div>
+        <div class="hidden sm:block sm:ml-6">
+          <div class="flex space-x-4">
+            <a href="/" class="nav" id="/home" aria-current="page">Home</a>
+            <a href="/destinations" class="nav" id="/destinations">Destinations</a>
+            <a href="/posts" class="nav" id="/posts">Posts</a>
+            <a href="/about" class="nav" id="/about">About</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<script>
+const activeClassList = ['text-white','px-3','py-2','rounded-md','text-sm','font-medium','bg-indigo-500'];
+const inactiveClassList = ['text-gray-300', 'hover:bg-indigo-500', 'hover:text-white', 'px-3', 'py-2', 'rounded-md', 'text-sm', 'font-medium'];
+
+const navs = document.querySelectorAll('.nav');
+
+const currentLocation = window.location.pathname === '/' ? '/home' : window.location.pathname;
+navs.forEach(nav => {
+  if (nav.id === currentLocation || currentLocation.includes(nav.id)) {
+    activeClassList.forEach(acl => {
+      nav.classList.add(acl)
+    });
+  } else {
+    inactiveClassList.forEach(icl => {
+      nav.classList.add(icl);
+    });
+  }
+});
+</script>

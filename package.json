@@ -1,0 +1,22 @@
+{
+  "name": "@example/starter",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "devDependencies": {
+    "@astrojs/renderer-react": "^0.4.0",
+    "@astrojs/renderer-vue": "^0.3.0",
+    "astro": "^0.22.9"
+  },
+  "dependencies": {
+    "@cloudinary/url-gen": "^1.4.2",
+    "@tailwindcss/typography": "^0.5.0",
+    "swiper": "^7.4.1",
+    "tailwindcss": "^3.0.13"
+  }
+}

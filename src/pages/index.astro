@@ -1,0 +1,93 @@
+---
+import Base from '../layouts/Base.astro';
+import Features from '../components/Features.astro';
+import Gallery from '../components/Gallery.jsx';
+---
+
+<Base title="Welcome">
+<section>
+    <div class="relative -mx-8">
+      <div class="flex flex-col lg:flex-row bg-gray-100">
+        <div class="ml-8 mr-8 xl:pl-10 py-8">
+          <h1
+            class="
+              text-3xl
+              p-2
+              sm:text-5xl
+              md:text-6xl
+              lg:text-5xl
+              font-black
+              leading-none
+            "
+          >
+            Where To Next?
+            <br />
+            <br />
+            <span tw="text-primary-500">The World is ready.</span>
+          </h1>
+          <p
+            class="
+              max-w-md
+              my-8
+              p-2
+              lg:my-5 lg:my-8
+              sm:text-lg
+              lg:text-base
+              xl:text-lg
+              leading-loose
+            "
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus ligula, iaculis vitae lectus venenatis, facilisis molestie mauris. Nunc quam nisi, lacinia ac sem in, varius fringilla lectus. Sed semper vel sapien in facilisis. 
+          </p>
+          <p
+            class="
+              max-w-md
+              my-8
+              p-2
+              lg:my-5 lg:my-8
+              sm:text-lg
+              lg:text-base
+              xl:text-lg
+              leading-loose
+            "
+          >
+           Aenean auctor ultricies vulputate. Mauris finibus nulla sit amet elit suscipit pellentesque. Sed tristique, felis eget commodo efficitur, lectus purus finibus ligula, vulputate iaculis dolor sem eget nisi. Duis hendrerit tempor turpis.
+          </p>
+          <p
+            class="
+              max-w-md
+              my-8
+              p-2
+              lg:my-5 lg:my-8
+              sm:text-lg
+              lg:text-base
+              xl:text-lg
+              leading-loose
+            "
+          >
+            Phasellus quam odio, suscipit nec consequat vitae, ullamcorper sit amet ipsum. Nunc commodo dui at condimentum elementum. Ut eget interdum turpis, nec pellentesque arcu. Proin congue ipsum volutpat arcu ornare laoreet.
+          </p>
+        </div>
+        <!-- left -->
+        <div
+          style="
+            background-image: url('https://res.cloudinary.com/tamas-demo/image/upload/f_auto,q_auto,w_1400,c_fit,e_improve/jamstack-training/travel/hero');
+          "
+          class="
+            bg-indigo-500 bg-cover bg-center
+            xl:ml-24
+            h-96
+            lg:h-auto flex-1
+          "
+        ></div>
+        <!-- right -->
+      </div>
+    </div>
+</section>
+<section>
+	<Features />
+</section>
+<section>
+	<Gallery client:visible />
+</section>
+</Base>

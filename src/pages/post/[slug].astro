@@ -1,0 +1,20 @@
+---
+import Base from '../../layouts/Base.astro';
+import BlogPost from '../../components/BlogPost.astro';
+
+export function getStaticPaths() {
+  const posts = Astro.fetchContent('../../../posts/*.md');
+  return posts.map(post => ({
+    params: { slug: post.file.pathname.split('/').pop().split('.').shift()}, props: { post }
+  }));
+}
+
+const { Content, title, published } = Astro.props.post;
+console.log(Astro.props.post);
+---
+
+<Base title="Article">
+  <BlogPost {title} {published}>
+    <Content />
+  </BlogPost>
+</Base>

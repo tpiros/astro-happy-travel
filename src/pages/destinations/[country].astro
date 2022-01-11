@@ -1,0 +1,23 @@
+---
+import Base from '../../layouts/Base.astro'
+import destinations from '../../../data/destinations.json';
+import Postcard from '../../components/Postcard.vue'
+export function getStaticPaths() {
+  return destinations.map(destination => ({ params: { country: destination.country.toLowerCase()}}))
+}
+
+let { country } = Astro.request.params;
+const [ countryData ] = destinations.filter(destination => destination.country.toLowerCase() === country);
+country = country.charAt(0).toUpperCase() + country.slice(1);
+---
+
+<Base title="Country List">
+  <div class="w-full">
+    <h1 class="text-4xl sm:text-5xl font-black tracking-wide text-center p-4">Hello from { country }!</h1>
+    <h2 class="text-3xl sm:text-2xl font-bold text-center">As they say: { countryData.title } 😉</h2>
+    <p class="p-4">{ countryData.description }</p>
+    <section>
+      <Postcard client:load imageSrc={countryData.publicId} />
+    </section>
+  </div>
+</Base>

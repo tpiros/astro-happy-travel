@@ -1,0 +1,10 @@
+---
+const { title, published } = Astro.props;
+---
+<div>
+  <main class="prose-xl mx-auto w-11/12 p-2">
+  <h1 class="font-bold text-5xl">{title}</h1>
+  <small>Posted @ {new Date(published).toLocaleDateString("en-GB")}</small>
+      <slot />
+    </main>
+</div>

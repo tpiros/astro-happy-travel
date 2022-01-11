@@ -1,0 +1,28 @@
+---
+const features = [
+  {
+    title: "Money Back Guarantee",
+  },
+  { title: "24/7 Support" },
+  {  title: "Expert Advice" },
+  {  title: "Straightforward" },
+  {  title: "Largest Operator" },
+  {  title: "Convenient" }
+];
+---
+<div class="flex flex-col items-center md:items-stretch md:flex-row flex-wrap md:justify-center max-w-screen-lg mx-auto py-20 md:py-24">
+  <h5 class="font-bold text-purple-700 mb-4">Features</h5>
+  <h2 class="text-4xl sm:text-5xl font-black tracking-wide text-center w-full">Why choose us?</h2>
+  {features.map((feature, i) => (
+    <div class="md:w-1/2 lg:w-1/3 max-w-xs">
+      <div class="flex flex-col items-center sm:items-start text-center sm:text-left h-full mx-4 px-2 py-8">
+        <span class="mt-6">
+          <span class="tracking-wider font-bold text-xl leading-none">{feature.title || "Fully Secure"}</span>
+          <p class="mt-2 font-normal text-gray-400 leading-snug">
+            Lorem ipsum donor amet siti ceali ut enim ad minim veniam, quis nostrud
+          </p>
+        </span>
+      </div>
+    </div>
+  ))}
+</div>
