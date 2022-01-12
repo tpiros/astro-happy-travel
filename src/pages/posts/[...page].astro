@@ -21,7 +21,6 @@ const { page } = Astro.props;
     </h1>
     {page.data.map(post => {
       const href = `/post/${post.file.pathname.split('/').pop().split('.').shift()}`;
-      console.log(post.posted)
       return (
         <BlogPreview title={post.title} published={post.published} excerpt={post.excerpt} href={href} />
       )
